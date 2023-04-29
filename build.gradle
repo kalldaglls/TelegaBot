@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'org.example.App'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'com.github.pengrad:java-telegram-bot-api:6.6.1'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.2'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.14.2'
+}
+
+test {
+    useJUnitPlatform()
+}
